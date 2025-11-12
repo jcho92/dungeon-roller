@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
+import React, { use, useEffect, useState } from "react";
 import { diceRoll } from "./roller";
+import { on } from "events";
 
 interface DamageProps {
     id: number;
@@ -7,6 +8,9 @@ interface DamageProps {
     dmgModifier: number;
     attackModifier: number;
     removeComponent?: (index: number) => void;
+    toggle: boolean;
+    onToggle: (id: number) => void;
+    canCrit: boolean;
 }
 
 const ModDamageComponent: React.FC<DamageProps> = ({
@@ -15,7 +19,19 @@ const ModDamageComponent: React.FC<DamageProps> = ({
     dmgModifier,
     attackModifier,
     removeComponent,
+    toggle,
+    onToggle,
+    canCrit
 }) => {
+    const [isToggled, setIsToggled] = useState(toggle);
+    const handleToggle = () => {
+        onToggle(id);
+        setIsToggled(!isToggled);
+    };
+
+    useEffect(() => {
+    
+    }, [isToggled]);
 
     return (
         <div>
@@ -23,6 +39,10 @@ const ModDamageComponent: React.FC<DamageProps> = ({
 
             {<div>Damage Modifier: {dmgModifier}</div>}
             {<div>Attack Modifier: {attackModifier}</div>}
+            {canCrit && <div>Can Critical Hit</div>}
+            <button onClick={handleToggle}>
+                {isToggled ? "Disable" : "Enable"} Toggle
+            </button>
             <button
                 onClick={() => {
                     if (removeComponent) {
