@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/dungeon-roller/static/css/main.f855e6bc.css",
-    "main.js": "/dungeon-roller/static/js/main.0552d6bb.js",
+    "main.js": "/dungeon-roller/static/js/main.72062996.js",
     "static/js/453.117b0875.chunk.js": "/dungeon-roller/static/js/453.117b0875.chunk.js",
     "index.html": "/dungeon-roller/index.html",
     "main.f855e6bc.css.map": "/dungeon-roller/static/css/main.f855e6bc.css.map",
-    "main.0552d6bb.js.map": "/dungeon-roller/static/js/main.0552d6bb.js.map",
+    "main.72062996.js.map": "/dungeon-roller/static/js/main.72062996.js.map",
     "453.117b0875.chunk.js.map": "/dungeon-roller/static/js/453.117b0875.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.0552d6bb.js"
+    "static/js/main.72062996.js"
   ]
 }
